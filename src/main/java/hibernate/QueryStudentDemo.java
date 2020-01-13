@@ -18,19 +18,18 @@ public class QueryStudentDemo {
         Session session = factory.getCurrentSession();
 
         try {
-            System.out.println("Creating student object");
 
             System.out.println("Begin transaction");
             session.beginTransaction();
 
+            session.beginTransaction();
+
             List<Student> theStudents = session.createQuery("from Student").list();
 
-            System.out.println("\n\nStudent john doe");
-            DisplaySudents(theStudents);
-
-            theStudents = session.createQuery("from Student s where s.lastName='Doe'").list();
-
-            DisplaySudents(theStudents);
+            for(Student student : theStudents)
+            {
+                System.out.println(student);
+            }
 
             System.out.println("Commit transaction");
             session.getTransaction().commit();
