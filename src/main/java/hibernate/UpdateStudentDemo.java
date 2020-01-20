@@ -23,7 +23,7 @@ public class UpdateStudentDemo {
 
             Student student = session.get(Student.class,studentId);
 
-            student.setFirstName("Šašo");
+            student.setFirstName("Dodo");
 
             session.getTransaction().commit();
 
@@ -32,7 +32,7 @@ public class UpdateStudentDemo {
             session.beginTransaction();
 
 
-            session.createQuery("update Student set first_name='Šašo'").executeUpdate();
+            session.createQuery("update Student set first_name='Dodo'").executeUpdate();
 
 
             session.getTransaction().commit();
